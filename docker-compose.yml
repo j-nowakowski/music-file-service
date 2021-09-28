@@ -26,8 +26,6 @@ services:
       - db
     volumes:
       - ./app/input:/tmp/input
-      - ./app/output:/tmp/output
 
 volumes:
   input:
-  output:

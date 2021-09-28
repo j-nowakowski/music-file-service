@@ -20,7 +20,6 @@ const (
 	artistFileLoc      string = "/tmp/input/artist"
 	genreFileLoc       string = "/tmp/input/genre"
 	genreArtistFileLoc string = "/tmp/input/genre_artist"
-	outputDirLoc       string = "/tmp/output"
 	dbUsernameEnvVar   string = "MYSQL_USER"
 	dbPasswordEnvVar   string = "MYSQL_PASSWORD"
 	dbHostEnvVar       string = "MYSQL_HOST"
