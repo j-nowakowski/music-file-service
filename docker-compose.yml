@@ -1,0 +1,33 @@
+version: "3"
+
+services:
+  db:
+    build:
+      context: ./db
+    container_name: db
+    ports:
+      - "53060:3306"
+    
+  app:
+    build:
+      context: ./app
+    environment:
+      # For the sake of this example project, credentials are stored here.
+      # In real application, credentials would not be committed to the repository,
+      # and root would not be the user used.
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+      MYSQL_HOST: db
+    container_name: app
+    ports:
+      - "50800:8080"
+    tty: true
+    depends_on:
+      - db
+    volumes:
+      - ./app/input:/tmp/input
+      - ./app/output:/tmp/output
+
+volumes:
+  input:
+  output:
